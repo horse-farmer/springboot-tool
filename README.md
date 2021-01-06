@@ -13,10 +13,8 @@
 allprojects {
     repositories {
          maven {
-            maven { url 'https://maven.aliyun.com/repository/public/' }
-            maven { url 'https://maven.aliyun.com/repository/spring/'}
-            mavenLocal()
-            mavenCentral()
+             name "aliyunmaven"
+             url "http://maven.aliyun.com/nexus/content/groups/public/"
          }
     }
 }
