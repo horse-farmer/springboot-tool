@@ -12,17 +12,25 @@ repositories {
     mavenCentral()
 }
 
+
+// 排除 spring-boot-starter-logging
+configurations {
+    compile.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    implementation.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    testImplementation.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+}
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
     runtimeOnly 'mysql:mysql-connector-java'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2'
 
     // lombok依赖
     compileOnly 'org.projectlombok:lombok:1.18.16'
     annotationProcessor 'org.projectlombok:lombok:1.18.16'
+    compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.3.2'
 }
 
 test {

@@ -12,5 +12,8 @@ import javax.annotation.Resource;
 @Data
 @Resource
 public class User {
-    private String permissions;
+    private Long id;
+    private String name;
+    private Integer age;
+    private String email;
 }

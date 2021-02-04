@@ -6,16 +6,19 @@ spring:
       # 数据源名称
     name: defaultDataSource
       # 数据库连接地址
-    url: jdbc:mysql://localhost:3306/blue?serverTimezone=UTC
+    url: jdbc:mysql://localhost:33060/mybatis_plus?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
     # 数据库用户名&密码：
     username: root
-    password: Xinxin0401!
+    password: 123456
 # 应用服务 WEB 访问端口
 server:
   port: 8080
 #下面这些内容是为了让MyBatis映射
-mybatis:
-  #指定Mybatis的Mapper文件
-  mapper-locations: classpath:mappers/*xml
-  #指定Mybatis的实体目录
-  type-aliases-package: com.horsefarmer.springboottool.entity
+#mybatis:
+#  #指定Mybatis的Mapper文件
+#  mapper-locations: classpath:mappers/*xml
+#  #指定Mybatis的实体目录
+#  type-aliases-package: com.horsefarmer.springboottool.entity
+
+logging:
+  config: classpath:config/log4j2-spring.xml
