@@ -1,6 +1,6 @@
 package com.horsefarmer.springboottool.controller;
 
-import com.horsefarmer.springboottool.entity.User;
+import com.horsefarmer.springboottool.pojo.User;
 import com.horsefarmer.springboottool.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**

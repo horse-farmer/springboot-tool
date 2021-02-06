@@ -1,4 +1,4 @@
-package com.horsefarmer.springboottool.entity;
+package com.horsefarmer.springboottool.pojo;
 
 import lombok.*;
 

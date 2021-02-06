@@ -1,6 +1,6 @@
 package com.horsefarmer.springboottool.controller;
 
-import com.horsefarmer.springboottool.entity.Message;
+import com.horsefarmer.springboottool.pojo.Message;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
