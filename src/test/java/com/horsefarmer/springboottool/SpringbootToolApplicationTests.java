@@ -38,7 +38,7 @@ class SpringbootToolApplicationTests {
         User user = new User();
         user.setId(3L);
         user.setName("大吉大利");
-//        user.setAge(324);
+        user.setAge(324);
         int i = userMapper.updateById(user);
         System.out.println(i);
     }
