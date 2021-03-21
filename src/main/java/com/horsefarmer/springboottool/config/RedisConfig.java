@@ -19,7 +19,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @Configuration
 public class RedisConfig {
 
-
+    // 这时一个固定的模板，在开发中，可以直接使用
     // 编写我们自己的RedisTemplate，我们自己定义的redisTemplate
     @Bean
     @SuppressWarnings("all")
@@ -27,7 +27,7 @@ public class RedisConfig {
         // 为了开发方便，一般直接使用<String, Object>
         RedisTemplate<String, Object> template = new RedisTemplate<>();
         template.setConnectionFactory(factory);
-        // 序列化配置
+        // Json序列化配置
         Jackson2JsonRedisSerializer objectJackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);

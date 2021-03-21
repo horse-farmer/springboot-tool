@@ -3,8 +3,10 @@ package com.horsefarmer.springboottool;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.horsefarmer.springboottool.pojo.User;
+import com.horsefarmer.springboottool.utils.RedisUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 
@@ -19,12 +21,16 @@ import java.util.Date;
 public class RedisTest {
 
     @Autowired
+    @Qualifier("redisTemplate")
     private RedisTemplate redisTemplate;
+
+    @Autowired
+    private RedisUtil redisUtil;
 
 
     @Test
     public void contextLoads() {
-
+    //
         // redisTempLate     操作不同类型的数据，api和我们的指令是一样的
 
         // opsForValue        操作字符串类似     Stringl
@@ -51,5 +57,12 @@ public class RedisTest {
 //        String jsonUser = new ObjectMapper().writeValueAsString(horse);
         redisTemplate.opsForValue().set("user", horse);
         System.out.println(redisTemplate.opsForValue().get("user"));
+    }
+
+
+    @Test
+    public void testMyRedisUtil() {
+        redisUtil.set("name", "qibao");
+        System.out.println(redisUtil.get("name"));
     }
 }
