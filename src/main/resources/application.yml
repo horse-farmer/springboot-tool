@@ -13,6 +13,20 @@ spring:
     # 数据库用户名&密码：
     username: root
     password: 123456
+
+  mail:
+    username: 574441672@qq.com
+    password: dixchsomsdxgbcgd
+    host: smtp.qq.com
+    # 开启加密验证
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+    default-encoding: UTF-8
+    port: 465
+
 # 应用服务 WEB 访问端口
 server:
   port: 8080
@@ -31,3 +45,25 @@ mybatis-plus:
     db-config:
       logic-delete-value: 1 # 逻辑已删除值(默认为 1)
       logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+
+
+person:
+  id: ${random.uuid}
+  number: ${random.int}
+  name: mrpeng
+  age: 26
+  birth: 2020/11/11
+  interests:
+    - basketball
+    - film
+    - study
+# Dubbo配置
+dubbo:
+  application:
+    name: springboot-tool
+  registry:
+    address: zookeeper://localhost:2181 #查看zookeeper的配置文件，根据server.1=localhost:2888:3888;2181的信息填写address
+    timeout: 60000
+    preferred: true
+  scan:
+    base-packages: com.horsefarmer.springboottool.service.impl
