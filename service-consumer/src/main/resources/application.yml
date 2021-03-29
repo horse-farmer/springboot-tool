@@ -1,0 +1,12 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: consumer-service
+
+# 消费者去哪里拿服务需要暴露自己的名字
+dubbo:
+  application:
+    name: consumer-service
+  registry:
+    address: zookeeper://localhost:2181

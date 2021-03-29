@@ -1,0 +1,43 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.7.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+group = 'com.horsefarmer.springboottool'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+configurations {
+    compile.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    implementation.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    testImplementation.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+}
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    // Dubbo + zookeeper依赖
+    implementation group: 'org.apache.dubbo', name: 'dubbo-spring-boot-starter', version: '2.7.9'
+    // zkclient：zookeeper的客户端
+    // implementation group: 'com.github.sgroschupf', name: 'zkclient', version: '0.1'
+    // https://mvnrepository.com/artifact/com.101tec/zkclient
+    implementation group: 'com.101tec', name: 'zkclient', version: '0.10'
+
+    // https://mvnrepository.com/artifact/org.apache.curator/curator-framework
+    implementation group: 'org.apache.curator', name: 'curator-framework', version: '5.1.0'
+    // https://mvnrepository.com/artifact/org.apache.curator/curator-recipes
+    implementation group: 'org.apache.curator', name: 'curator-recipes', version: '5.1.0'
+    // https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper
+    implementation (group: 'org.apache.zookeeper', name: 'zookeeper', version: '3.6.2') {
+        exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

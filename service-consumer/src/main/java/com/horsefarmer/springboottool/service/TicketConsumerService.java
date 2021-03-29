@@ -3,9 +3,8 @@ package com.horsefarmer.springboottool.service;
 /**
  * @Description
  * @Author horse-farmer
- * @Date 2021/3/27 23:35
+ * @Date 2021/3/29 22:05
  */
-public interface TicketService {
-
-    String getTicket();
+public interface TicketConsumerService {
+    void buy();
 }
