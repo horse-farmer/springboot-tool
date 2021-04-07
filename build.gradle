@@ -19,9 +19,16 @@ configurations {
     implementation.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
     testImplementation.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
 }
+// 指定ES-high-level-client的版本为7.12.0
+ext['elasticsearch.version'] = '7.12.0'
+
 dependencies {
     // spring-boot-starter-data-redis依赖
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.3.4.RELEASE'
+
+    // spring-boot-starter-data-elasticsearch依赖
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-elasticsearch', version: '2.3.4.RELEASE'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     runtimeOnly 'mysql:mysql-connector-java'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
@@ -38,7 +45,7 @@ dependencies {
     implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.75'
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
-    // 右键任务依赖
+    // 邮件任务依赖
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '2.3.7.RELEASE'
 
     // Dubbo + zookeeper依赖

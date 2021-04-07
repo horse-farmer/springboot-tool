@@ -51,6 +51,7 @@ public class RedisTest {
         System.out.println(redisTemplate.opsForValue().get("myKey"));
     }
 
+/*
     @Test
     public void testSerialize() throws JsonProcessingException {
         User horse = new User(1231234L, "大吉大利", 33, "3ph0512@qq.com", 0, 0, new Date(), new Date());
@@ -58,6 +59,7 @@ public class RedisTest {
         redisTemplate.opsForValue().set("user", horse);
         System.out.println(redisTemplate.opsForValue().get("user"));
     }
+*/
 
 
     @Test

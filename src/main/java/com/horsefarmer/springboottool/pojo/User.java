@@ -29,7 +29,7 @@ public class User implements Serializable {
     private Integer age;
     private String email;
 
-    @Version // 乐观锁注解@Version
+    /*@Version // 乐观锁注解@Version
     private Integer version;
 
     @TableLogic
@@ -38,7 +38,7 @@ public class User implements Serializable {
     @TableField(fill = FieldFill.INSERT)
     private Date gmtCreate;
     @TableField(fill = FieldFill.INSERT_UPDATE)
-    private Date gmtUpdate;
+    private Date gmtUpdate;*/
 
 
 }

@@ -26,6 +26,10 @@ spring:
             enable: true
     default-encoding: UTF-8
     port: 465
+  groovy:
+    template:
+      configuration:
+        auto-escape:
 
 # 应用服务 WEB 访问端口
 server:
@@ -67,3 +71,7 @@ dubbo:
     preferred: true
   scan:
     base-packages: com.horsefarmer.springboottool.service.impl
+
+es:
+  host: localhost
+  port: 9200
