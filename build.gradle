@@ -64,6 +64,12 @@ dependencies {
         exclude group: 'org.slf4j', module: 'slf4j-log4j12'
     }
 
+    // kafka的版本要和spring-boot版本一致（最好）
+    // https://mvnrepository.com/artifact/org.springframework.kafka/spring-kafka
+    implementation group: 'org.springframework.kafka', name: 'spring-kafka', version: '2.3.4.RELEASE'
+
+
+
 
 }
 
